@@ -1,0 +1,110 @@
+/*
+	Nord website background: 242933
+	Nord00: 2E3440
+	Nord01: 3B4252
+	Nord02: 434C5E
+	Nord03: 4C566A
+
+	Nord04: D8DEE9
+	Nord05: E5E9F0
+	Nord06: ECEFF4
+
+	Nord07: 8FBCBB
+	Nord08: 88C0D0
+	Nord09: 81A1C1
+	Nord10: 5E81AC
+
+	Nord11: BF616A
+	Nord12: D08770
+	Nord13: EBCB8B
+	Nord14: A3BE8C
+	Nord15: B48EAD
+*/
+
+@font-face {
+	font-family: "noto-sans";
+	src: url("static/NotoSansDisplay-VariableFont_wdth,wght.ttf") format(truetype);
+}
+
+* {
+	font-family: "noto-sans", sans-serif, serif;
+}
+
+:root {
+	--nord-background: #242933;
+	--nord-canvas: #2E3440;
+	--nord-inactive: #3B4252;
+	--nord-active: #434C5e;
+	--nord3: #4C566A;
+
+	--nord-text: #D8DEE9;
+	--nord-subtle: #E5E9F0;
+	--nord-important: #ECEFF4;
+
+	--nord-primary2: #8FBCBB;
+	--nord-primary1: #88C0D0;
+	--nord-secondary: #81A1C1;
+	--nord-teriary: #5E81AC;
+
+	--nord-red: #BF616A;
+	--nord-orange: #D08770;
+	--nord-yellow: #EBCB8B;
+	--nord-green: #A3BE8C;
+	--nord-purple: #B48EAD;
+}
+
+.flex-container {
+	display: flex;
+	/*flex-direction: row;
+	flex-wrap: wrap;*/
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: flex-start;
+	align-content: space-around;
+}
+
+h1 {
+	font-size: 72px;
+}
+
+h2 {
+	font-size: 64px;
+}
+
+h3 {
+	font-size: 56px;
+}
+
+h4 {
+	font-size: 48px;
+}
+
+h5 {
+	font-size: 40px;
+}
+
+h6 {
+	font-size: 32px;
+}
+
+body {
+	text-align: left;
+	color: var(--nord-text);
+	background-color: var(--nord-background);
+}
+
+button {
+	border-style: solid;
+	padding: 16px 32px;
+	text-align: center;
+	text-decoration: inline-block;
+	font-size: 24px;
+	margin: 25px;
+	border-radius: 52px;
+	background-color: var(--nord-inactive);
+	color: var(--nord-important);
+}
+
+button:hover {
+	background-color: var(--nord-active);
+}

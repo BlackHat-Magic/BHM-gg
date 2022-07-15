@@ -23,7 +23,7 @@
 
 @font-face {
 	font-family: "noto-sans";
-	src: url("static/NotoSansDisplay-VariableFont_wdth,wght.ttf") format(truetype);
+	src: url("static/fonts/NotoSansDisplay-VariableFont_wdth,wght.ttf") format(truetype);
 }
 
 * {

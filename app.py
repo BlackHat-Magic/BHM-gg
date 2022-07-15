@@ -5,43 +5,29 @@ app = Flask(__name__)
 def home():
 	return(render_template("home/index.html"))
 
-@app.route("/twitch")
-def twitch():
-	return(redirect("https://www.twitch.tv/blackhat_magic", 301))
 
 @app.route("/ttv")
+@app.route("/twitch")
 def ttv():
 	return(redirect("https://www.twitch.tv/blackhat_magic", 301))
 
-@app.route("/youtube")
-def youtube():
-	return(redirect("https://www.youtube.com/c/BlackHatMagic", 301))
-
 @app.route("/yt")
+@app.route("/youtube")
 def yt():
 	return(redirect("https://www.youtube.com/c/BlackHatMagic", 301))
 
-@app.route("/twitter")
-def twitter():
-	return(redirect("https://www.twitter.com/Black_HatMagic", 301))
-
-@app.route("/twt")
-def twt():
-	return(redirect("https://www.twitter.com/Black_HatMagic", 301))
-
 @app.route("/t")
+@app.route("/twt")
+@app.route("/twitter")
 def t():
 	return(redirect("https://www.twitter.com/Black_HatMagic", 301))
-
-@app.route("/github")
-def github():
-	return(redirect("https://www.github.com/BlackHat-Magic", 301))
 
 @app.route("/gitlab")
 def gitlab():
 	return("Well aren't you a nosy one? Gitlab coming soon (tm).")
 
 @app.route("/git")
+@app.route("/github")
 def git():
 	return(redirect("https://www.github.com/BlackHat-Magic", 301))
 

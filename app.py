@@ -55,5 +55,19 @@ def discordProfile():
 def steam():
 	return(redirect("https://steamcommunity.com/id/Black_Hat_Magic/", 301))
 
+@app.route("/gfapp")
+@app.route("/gfapplication")
+def gfapp():
+	return(redirect("https://youtu.be/dQw4w9WgXcQ", 301))
+
+@app.route("/of")
+@app.route("/onlyfans")
+def of():
+	return(redirect("https://youtu.be/fC7oUOUEEi4", 301))
+
+@app.route("/lstoastgf")
+def lstoastgf():
+	return(redirect("https://docs.google.com/forms/d/e/1FAIpQLSdsLM7-g0ACPAKb7HGVcY6y1k5QS2c6hhpxxnVzKyQbfslRHw/viewform", 301))
+
 if(__name__ == "__main__"):
 	app.run(host="0.0.0.0")

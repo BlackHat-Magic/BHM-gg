@@ -23,9 +23,14 @@ $(function(){
 					num--;
 				};
 			});
-		} else {
+		} else if (splash[0] == "random") {
 			$("#splash").html("<a class=\"splashText\" href=\"" + splash[(splash.length - 1)] + "\">" + splash[randint(1,(splash.length - 2))] + "</a>");
 			console.log("It's random");
+		} else {
+			$("#splash").html("<a class=\"splashText\">" + splash[1] + "</a>");
+			$("#splash").click(function(){
+				alert(splash[2][randint(0,(splash[2].length - 1))])
+			});
 		};
 	});
 });

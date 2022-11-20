@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2022 Luke Henderson
+Copyright (c) OpenJS Foundation and other contributors, https://openjsf.org/
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

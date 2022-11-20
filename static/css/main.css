@@ -402,4 +402,7 @@ div.interior {
         margin: 0;
         width: 100%;
     }
+    .flex.vertical, .flex.horizontal {
+        margin: 12px;
+    }
 }

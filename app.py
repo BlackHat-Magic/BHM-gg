@@ -41,7 +41,7 @@ def email():
 
 @app.route("/mail")
 def mail():
-        return(redirect("mailto:BlackHatMagic@gmail.com", 301))
+	return(redirect("mailto:BlackHatMagic@gmail.com", 301))
 
 @app.route("/discord")
 def discord():

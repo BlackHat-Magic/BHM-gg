@@ -1,267 +1,227 @@
-{# templates/index.html #}
-
-{% macro icon(name) -%}
-{% set n = name|lower %}
-{% if 'twitch' in n %}
-<svg viewBox="0 0 24 24" class="size-4 fill-current" role="img" aria-hidden="true">
-  <path d="M4 3h17v10.5l-4 4h-3l-2.5 2.5H9.5V17H4V3Zm3 2.5V15h7v2l2-2h3.5V5.5H7Zm7.75 2.25h1.75v4.5h-1.75v-4.5Zm-4 0h1.75v4.5H10.75v-4.5Z" />
-</svg>
-{% elif 'twitter' in n or 'x'==n %}
-<svg viewBox="0 0 24 24" class="size-4 fill-current" role="img" aria-hidden="true">
-  <path d="M20.06 4H16.9l-4.19 5.37L8.09 4H3.5l6.2 8.72L3.8 20h3.16l4.45-5.7L16 20h4.59l-6.46-9.08L20.06 4Z" />
-</svg>
-{% elif 'discord' in n %}
-<svg viewBox="0 0 24 24" class="size-4 fill-current" role="img" aria-hidden="true">
-  <path d="M20.3 5.8A16 16 0 0 0 15.9 4l-.2.4c.9.3 1.9.7 2.8 1.2-1.2-.6-2.5-1-3.8-1.3-.6-.1-1.2-.2-1.8-.2s-1.2.1-1.8.2c-1.3.3-2.6.7-3.8 1.3.9-.5 1.9-.9 2.8-1.2L8.1 4a16 16 0 0 0-4.4 1.8C1.2 9 0 13.1 0 17.1c0 0 1.9 3.3 6.9 3.6 0 0 .8-1 1.5-1.8-2.8-.8-3.8-2.4-3.8-2.4.3.2.8.5.8.5 3.2 1.7 7.2 1.7 10.4 0 0 0 .5-.3.8-.5 0 0-1 1.6-3.8 2.4.7.8 1.5 1.8 1.5 1.8 5-.3 6.9-3.6 6.9-3.6 0-4-1.2-8.1-3.1-11.3ZM8.6 14.5c-.8 0-1.5-.8-1.5-1.8s.7-1.8 1.5-1.8 1.5.8 1.5 1.8-.7 1.8-1.5 1.8Zm6.8 0c-.8 0-1.5-.8-1.5-1.8s.7-1.8 1.5-1.8 1.5.8 1.5 1.8-.7 1.8-1.5 1.8Z" />
-</svg>
-{% elif 'github' in n %}
-<svg viewBox="0 0 24 24" class="size-4 fill-current" role="img" aria-hidden="true">
-  <path d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.2 3.4 9.5 8.2 11 .6.1.8-.3.8-.6v-2.1c-3.3.7-4-1.4-4-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1 .1 1.6 1 1.6 1 .9 1.6 2.5 1.1 3.1.8.1-.7.4-1.1.7-1.3-2.6-.3-5.3-1.3-5.3-6 0-1.3.5-2.4 1.2-3.3-.1-.3-.5-1.6.1-3.2 0 0 1-.3 3.4 1.2a11.8 11.8 0 0 1 6.2 0c2.4-1.5 3.4-1.2 3.4-1.2.6 1.6.2 2.9.1 3.2.8.9 1.2 2 1.2 3.3 0 4.7-2.7 5.7-5.3 6 .4.3.8.9.8 1.9v2.8c0 .3.2.7.8.6a11.5 11.5 0 0 0 8.2-11C23.5 5.7 18.3.5 12 .5Z" />
-</svg>
-{% elif 'email' in n or 'mail' in n %}
-<svg viewBox="0 0 24 24" class="size-4 fill-current" role="img" aria-hidden="true">
-  <path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9.1 7.5 8.1-6.2H3.8l8.1 6.2a.5.5 0 0 0 .6 0Z" />
-</svg>
-{% elif 'steam' in n %}
-<svg viewBox="0 0 24 24" class="size-4 fill-current" role="img" aria-hidden="true">
-  <path d="M12 2a10 10 0 0 0-9.45 6.6l6.13 2.53a3.6 3.6 0 0 1 6.67 1.12l4.6 1.9A10 10 0 0 0 12 2ZM6.6 15.1l-2.3-.95A10 10 0 0 0 12 22a10 10 0 0 0 9.34-7.37l-3.64-1.5a3.63 3.63 0 0 1-6.6-1.08l-2.42-1A2.7 2.7 0 1 0 6.6 15.1ZM5.6 14a1.7 1.7 0 1 1 2.3 3 1.7 1.7 0 0 1-2.3-3Zm9.3-7.8a3.2 3.2 0 1 1 0 6.4 3.2 3.2 0 0 1 0-6.4Zm0 1.2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" />
-</svg>
-{% else %}
-<svg viewBox="0 0 24 24" class="size-4 fill-current" role="img" aria-hidden="true">
-  <circle cx="12" cy="12" r="9"></circle>
-</svg>
-{% endif %}
-{%- endmacro %}
-
-<!doctype html>
-<html
-  lang="en"
-  x-data="linkPage()"
-  x-init="init()"
-  :class="{ touch: isTouch, 'no-motion': !motionEnabled }"
->
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="utf-8" />
     <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
+        name="viewport"
+        content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
-    <title>{{ title or "Links" }}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>{{ title | default('Links · Home') }}</title>
 
     <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='dist/main.css') }}"
+        rel="icon"
+        type="image/png"
+        href="{{ url_for('static', filename='img/cat.png') }}"
     />
 
+    <!-- Tailwind v4 build output -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='dist/main.css') }}"
+    />
+
+    <!-- Parallax logic -->
     <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"
+        defer
+        src="{{ url_for('static', filename='js/index.js') }}"
     ></script>
-  </head>
 
-  <body class="min-h-dvh antialiased">
-    <!-- Decorative, interactive background -->
-    <div class="fixed inset-0 -z-10 overflow-hidden parallax" aria-hidden="true">
-      <!-- Layer 1: soft blended radial gradients -->
-      <div
-        class="absolute -inset-[15vmax] parallax-layer layer-scale"
-        :style="parallaxVars(0.04, 22)"
-      >
-        <div
-          class="size-[160vmax] -translate-x-1/3 -translate-y-1/4 rounded-full blur-3xl opacity-70 bg-radials"
-        ></div>
-      </div>
+    <!-- Alpine.js -->
+    <script
+        defer
+        src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+</head>
 
-      <!-- Layer 2: faint grid/noise overlay -->
-      <div
-        class="absolute inset-0 mix-blend-overlay opacity-40 parallax-layer"
-        :style="parallaxVars(0.02, 10)"
-      >
-        <div class="absolute inset-0 bg-grid"></div>
-      </div>
-
-      <!-- Layer 3: subtle vignette -->
-      <div class="absolute inset-0 pointer-events-none vignette"></div>
+<body
+    class="min-h-[100dvh] bg-black text-white antialiased selection:bg-[oklch(70%_0.10_300)] selection:text-black"
+>
+<div
+    x-data="parallaxPage({ intensity: 32, mobileIntensity: 10 })"
+    x-init="init()"
+    @mousemove="onMouseMove($event)"
+    class="relative min-h-[100dvh] overflow-hidden"
+>
+<!-- BACKGROUND (z-0 so it sits above body bg, below content) -->
+<div class="pointer-events-none fixed inset-0 z-0">
+    <!-- Layer 1: soft blobs -->
+    <div
+        id="bg-layer-1"
+        class="absolute inset-[-5%] will-change-transform"
+        :style="layerStyle(1)"
+    >
+        <div class="h-full w-full bg-art-1"></div>
     </div>
 
-    <!-- Foreground container -->
-    <main class="mx-auto flex min-h-dvh w-dvw items-center justify-center p-4 sm:p-6">
-      <section
-        class="link-panel relative h-dvh w-full overflow-hidden rounded-none border md:h-auto md:w-full md:max-w-lg md:rounded-[24px] lg:max-w-xl shadow-[0_10px_40px_-10px_oklch(0%_0_0_/0.7)]"
-      >
-        <!-- inner gradient edge highlight -->
-        <div class="panel-edge pointer-events-none absolute inset-0"></div>
+    <!-- Layer 2: subtle grid/noise -->
+    <div
+        id="bg-layer-2"
+        class="absolute inset-[-10%] will-change-transform mix-blend-overlay"
+        :style="layerStyle(2)"
+    >
+        <div class="h-full w-full bg-art-2 opacity-70"></div>
+    </div>
 
-        <div class="relative z-10 flex h-full flex-col items-center">
-          <!-- Header -->
-          <header class="w-full px-5 pt-10 sm:px-8 sm:pt-12">
-            <div class="flex flex-col items-center gap-5 text-center">
-              <img
-                src="{{ profile_image_url or url_for('static', filename='img/profile.jpg') }}"
-                alt="{{ display_name or 'Profile' }}"
-                class="size-28 rounded-full object-cover ring-2 ring-[var(--border)] sm:size-32"
-              />
-              <div class="space-y-1">
-                <h1 class="text-balance text-2xl font-semibold tracking-tight sm:text-3xl">
-                  {{ display_name or "Your Name" }}
-                </h1>
-                {% if bio %}
-                <p class="text-pretty text-sm text-muted sm:text-base">
-                  {{ bio }}
-                </p>
-                {% endif %}
-              </div>
-            </div>
-          </header>
+    <!-- Vignette -->
+    <div
+        class="absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_40%,transparent_0%,transparent_55%,rgba(0,0,0,0.35)_70%,rgba(0,0,0,0.85)_100%)]"
+        aria-hidden="true"
+    ></div>
+</div>
 
-          <!-- Links -->
-          <div class="mt-8 w-full px-5 pb-20 sm:mt-10 sm:px-8 sm:pb-14">
-            {% if not links %}
-              {% set links = [
-                {'label':'Twitch','href':'https://twitch.tv/yourname','aria':'Twitch'},
-                {'label':'Twitter','href':'https://twitter.com/yourname','aria':'Twitter'},
-                {'label':'Discord','href':'https://discord.gg/yourinvite','aria':'Discord'},
-                {'label':'GitHub','href':'https://github.com/yourname','aria':'GitHub'},
-                {'label':'Email','href':'mailto:you@example.com','aria':'Email'},
-                {'label':'Steam','href':'https://steamcommunity.com/id/yourname','aria':'Steam'},
-              ] %}
-            {% endif %}
+<!-- FOREGROUND (z-10) -->
+<main
+    class="relative z-10 mx-auto flex min-h-[100dvh] w-full items-center justify-center"
+>
+    <section
+        class="w-full h-[100dvh] rounded-none p-6
+                        bg-black/35 backdrop-blur-xl backdrop-saturate-150
+                        border border-[oklch(37%_0.09_300_/0.5)]
+                        shadow-[0_10px_50px_-15px_rgba(0,0,0,0.6)]
+                        max-sm:px-6 max-sm:py-8
+                        sm:h-auto sm:max-w-md sm:rounded-3xl sm:p-8"
+        role="region"
+        aria-label="Profile and links"
+    >
+        <!-- Profile -->
+        <header class="flex flex-col items-center gap-4 text-center">
+            <img
+                src="{{ url_for('static', filename='img/cat.png') }}"
+                alt="{{ display_name | default('Profile picture') }}"
+                class="size-28 rounded-full object-cover ring-2 ring-[oklch(70%_0.06_300_/0.35)]"
+            />
 
-            <ul class="mx-auto flex max-w-md flex-col gap-3 sm:gap-4">
-              {% for link in links %}
-              <li>
-                <a
-                  href="{{ link.href }}"
-                  {% if link.label|lower != 'email' %} target="_blank" rel="noopener noreferrer me" {% endif %}
-                  class="group relative isolate block w-full overflow-hidden rounded-xl border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--primary)]"
-                  aria-label="{{ link.aria or link.label }}"
+            <div class="space-y-1">
+                <h1
+                    class="text-balance text-2xl font-semibold text-[oklch(92%_0.02_300)]"
                 >
-                  <!-- Animated fill -->
-                  <span
-                    class="btn-fill-bg absolute inset-0 -z-10 origin-left scale-x-0 transform-gpu transition-transform duration-300 ease-out group-hover:scale-x-100"
-                  ></span>
+                    BlackHatMagic
+                </h1>
+                <p class="text-pretty text-sm/6 text-[oklch(82%_0.02_300_/0.8)]">
+                    Professional nolifer
+                </p>
+            </div>
+        </header>
 
-                  <!-- Subtle top sheen -->
-                  <span
-                    class="btn-sheen pointer-events-none absolute inset-x-0 top-0 -z-10 h-1/2 opacity-0 transition-opacity duration-300 group-hover:opacity-20"
-                  ></span>
-
-                  <div class="flex items-center gap-3 px-4 py-3 sm:gap-4 sm:px-5 sm:py-3.5">
-                    <span class="icon-chip size-6 shrink-0 grid place-items-center rounded-lg" aria-hidden="true">
-                      {{ icon(link.label) }}
-                    </span>
-                    <span class="text-sm font-medium sm:text-base">
-                      {{ link.label }}
-                    </span>
-                  </div>
-                </a>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-
-          <!-- Footer / Motion toggle (mobile iOS permission) -->
-          <div class="pointer-events-none absolute bottom-3 left-0 right-0 flex justify-center">
-            <button
-              type="button"
-              x-show="showMotionButton"
-              @click="requestMotion()"
-              class="pointer-events-auto rounded-full border px-3 py-1.5 text-xs text-muted transition-colors hover:text-current"
+        <div class="mt-8 space-y-3">
+            {% for item in [
+                {'label': 'Twitch', 'href': 'https://twitch.tv/BlackHat_Magic', 'icon': 'twitch'},
+                {'label': 'Twitter', 'href': 'https://x.com/Black_HatMagic', 'icon': 'x'},
+                {'label': 'Discord', 'href': 'https://discord.gg/dqSusZqenq', 'icon': 'discord'},
+                {'label': 'GitHub', 'href': 'https://github.com/BlackHat-Magic', 'icon': 'github'},
+                {'label': 'Email', 'href': 'mailto:blackhatmagic@bhm.gg', 'icon': 'mail'},
+                {'label': 'Steam', 'href': 'https://steamcommunity.com/id/Black_Hat_Magic/', 'icon': 'steam'}
+            ] %}
+            <a
+                href="{{ item.href }}"
+                {% if item.label != 'Email' %}target="_blank" rel="me noopener"{% endif %}
+                class="group relative block w-full overflow-hidden rounded-2xl
+                                border border-[oklch(40%_0.09_300_/0.7)]
+                                px-4 py-3 text-[oklch(90%_0.02_300)]
+                                transition-transform duration-150
+                                hover:-translate-y-0.5 focus:-translate-y-0.5
+                                focus:outline-none focus-visible:ring-2
+                                focus-visible:ring-[oklch(70%_0.10_300_/0.7)]
+                                active:translate-y-0"
             >
-              Enable motion effects
-            </button>
-          </div>
+                <span
+                    class="pointer-events-none absolute inset-0 w-0
+                                    bg-[oklch(35%_0.08_300_/0.9)]
+                                    transition-[width] duration-500 ease-out
+                                    group-hover:w-full group-focus-visible:w-full"
+                    aria-hidden="true"
+                ></span>
+                <span class="relative z-[1] flex items-center gap-3">
+                    {% if item.icon == 'twitch' %}
+                    <svg class="size-5 text-[oklch(80%_0.09_300)]" fill="currentColor" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <title>Twitch</title>
+                            <path d="M26.711 14.929l-4.284 4.284h-4.285l-3.749 3.749v-3.749h-4.82v-16.067h17.138zM8.502 1.004l-5.356 5.356v19.279h6.427v5.356l5.356-5.356h4.284l9.641-9.64v-14.996zM21.356 6.895h2.142v6.427h-2.142zM15.464 6.895h2.143v6.427h-2.144z"></path>
+                        </g>
+                    </svg>
+                    {% elif item.icon == 'x' %}
+                    <svg class="size-5 text-[oklch(80%_0.09_300)]" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <g id="7935ec95c421cee6d86eb22ecd12f847"></g>
+                            <path style="display: inline;" d="M459.186,151.787c0.203,4.501,0.305,9.023,0.305,13.565 c0,138.542-105.461,298.285-298.274,298.285c-59.209,0-114.322-17.357-160.716-47.104c8.212,0.973,16.546,1.47,25.012,1.47 c49.121,0,94.318-16.759,130.209-44.884c-45.887-0.841-84.596-31.154-97.938-72.804c6.408,1.227,12.968,1.886,19.73,1.886 c9.55,0,18.816-1.287,27.617-3.68c-47.955-9.633-84.1-52.001-84.1-102.795c0-0.446,0-0.882,0.011-1.318 c14.133,7.847,30.294,12.562,47.488,13.109c-28.134-18.796-46.637-50.885-46.637-87.262c0-19.212,5.16-37.218,14.193-52.7 c51.707,63.426,128.941,105.156,216.072,109.536c-1.784-7.675-2.718-15.674-2.718-23.896c0-57.891,46.941-104.832,104.832-104.832 c30.173,0,57.404,12.734,76.525,33.102c23.887-4.694,46.313-13.423,66.569-25.438c-7.827,24.485-24.434,45.025-46.089,58.002 c21.209-2.535,41.426-8.171,60.222-16.505C497.448,118.542,479.666,137.004,459.186,151.787z"></path>
+                        </g>
+                    </svg>
+                    {% elif item.icon == 'discord' %}
+                    <svg class="size-5 text-[oklch(80%_0.09_300)]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M18.59 5.88997C17.36 5.31997 16.05 4.89997 14.67 4.65997C14.5 4.95997 14.3 5.36997 14.17 5.69997C12.71 5.47997 11.26 5.47997 9.83001 5.69997C9.69001 5.36997 9.49001 4.95997 9.32001 4.65997C7.94001 4.89997 6.63001 5.31997 5.40001 5.88997C2.92001 9.62997 2.25001 13.28 2.58001 16.87C4.23001 18.1 5.82001 18.84 7.39001 19.33C7.78001 18.8 8.12001 18.23 8.42001 17.64C7.85001 17.43 7.31001 17.16 6.80001 16.85C6.94001 16.75 7.07001 16.64 7.20001 16.54C10.33 18 13.72 18 16.81 16.54C16.94 16.65 17.07 16.75 17.21 16.85C16.7 17.16 16.15 17.42 15.59 17.64C15.89 18.23 16.23 18.8 16.62 19.33C18.19 18.84 19.79 18.1 21.43 16.87C21.82 12.7 20.76 9.08997 18.61 5.88997H18.59ZM8.84001 14.67C7.90001 14.67 7.13001 13.8 7.13001 12.73C7.13001 11.66 7.88001 10.79 8.84001 10.79C9.80001 10.79 10.56 11.66 10.55 12.73C10.55 13.79 9.80001 14.67 8.84001 14.67ZM15.15 14.67C14.21 14.67 13.44 13.8 13.44 12.73C13.44 11.66 14.19 10.79 15.15 10.79C16.11 10.79 16.87 11.66 16.86 12.73C16.86 13.79 16.11 14.67 15.15 14.67Z" fill="currentColor"></path> 
+                        </g>
+                    </svg>
+                    {% elif item.icon == 'github' %}
+                    <svg class="size-5 text-[oklch(80%_0.09_300)]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M9.29183 21V18.4407L9.3255 16.6219C9.36595 16.0561 9.58639 15.5228 9.94907 15.11C9.95438 15.1039 9.95972 15.0979 9.9651 15.0919C9.9791 15.0763 9.96988 15.0511 9.94907 15.0485V15.0485C7.52554 14.746 5.0005 13.7227 5.0005 9.26749C4.9847 8.17021 5.3427 7.10648 6.00437 6.27215C6.02752 6.24297 6.05103 6.21406 6.07492 6.18545V6.18545C6.10601 6.1482 6.11618 6.09772 6.10194 6.05134C6.10107 6.04853 6.10021 6.04571 6.09935 6.04289C6.0832 5.9899 6.06804 5.93666 6.05388 5.88321C5.81065 4.96474 5.86295 3.98363 6.20527 3.09818C6.20779 3.09164 6.21034 3.08511 6.2129 3.07858C6.22568 3.04599 6.25251 3.02108 6.28698 3.01493V3.01493C6.50189 2.97661 7.37036 2.92534 9.03298 4.07346C9.08473 4.10919 9.13724 4.14609 9.19053 4.18418V4.18418C9.22901 4.21168 9.27794 4.22011 9.32344 4.20716C9.32487 4.20675 9.32631 4.20634 9.32774 4.20593C9.41699 4.18056 9.50648 4.15649 9.59617 4.1337C11.1766 3.73226 12.8234 3.73226 14.4038 4.1337C14.4889 4.1553 14.5737 4.17807 14.6584 4.20199C14.6602 4.20252 14.6621 4.20304 14.6639 4.20356C14.7174 4.21872 14.7749 4.20882 14.8202 4.17653V4.17653C14.8698 4.14114 14.9187 4.10679 14.967 4.07346C16.6257 2.92776 17.4894 2.9764 17.7053 3.01469V3.01469C17.7404 3.02092 17.7678 3.04628 17.781 3.07946C17.7827 3.08373 17.7843 3.08799 17.786 3.09226C18.1341 3.97811 18.1894 4.96214 17.946 5.88321C17.9315 5.93811 17.9159 5.9928 17.8993 6.04723V6.04723C17.8843 6.09618 17.8951 6.14942 17.9278 6.18875C17.9289 6.18998 17.9299 6.19121 17.9309 6.19245C17.9528 6.21877 17.9744 6.24534 17.9956 6.27215C18.6573 7.10648 19.0153 8.17021 18.9995 9.26749C18.9995 13.747 16.4565 14.7435 14.0214 15.015V15.015C14.0073 15.0165 14.001 15.0334 14.0105 15.0439C14.0141 15.0479 14.0178 15.0519 14.0214 15.0559C14.2671 15.3296 14.4577 15.6544 14.5811 16.0103C14.7101 16.3824 14.7626 16.7797 14.7351 17.1754V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                            <path d="M4 17C4.36915 17.0523 4.72159 17.1883 5.03065 17.3975C5.3397 17.6068 5.59726 17.8838 5.7838 18.2078C5.94231 18.4962 6.15601 18.7504 6.41264 18.9557C6.66927 19.161 6.96379 19.3135 7.27929 19.4043C7.59478 19.4952 7.92504 19.5226 8.25112 19.485C8.5772 19.4475 8.89268 19.3457 9.17946 19.1855" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                        </g>
+                    </svg>
+                    {% elif item.icon == 'mail' %}
+                    <svg class="size-5 text-[oklch(80%_0.09_300)]" height="200px" width="200px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill=currentColor">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <style type="text/css"> .st0{fill:currentColor;} </style>
+                            <g>
+                                <path class="st0" d="M440.917,67.925H71.083C31.827,67.925,0,99.752,0,139.008v233.984c0,39.256,31.827,71.083,71.083,71.083 h369.834c39.255,0,71.083-31.827,71.083-71.083V139.008C512,99.752,480.172,67.925,440.917,67.925z M178.166,321.72l-99.54,84.92 c-7.021,5.992-17.576,5.159-23.567-1.869c-5.992-7.021-5.159-17.576,1.87-23.567l99.54-84.92c7.02-5.992,17.574-5.159,23.566,1.87 C186.027,305.174,185.194,315.729,178.166,321.72z M256,289.436c-13.314-0.033-26.22-4.457-36.31-13.183l0.008,0.008l-0.032-0.024 c0.008,0.008,0.017,0.008,0.024,0.016L66.962,143.694c-6.98-6.058-7.723-16.612-1.674-23.583c6.057-6.98,16.612-7.723,23.582-1.674 l152.771,132.592c3.265,2.906,8.645,5.004,14.359,4.971c5.706,0.017,10.995-2.024,14.44-5.028l0.074-0.065l152.615-132.469 c6.971-6.049,17.526-5.306,23.583,1.674c6.048,6.97,5.306,17.525-1.674,23.583l-152.77,132.599 C282.211,284.929,269.322,289.419,256,289.436z M456.948,404.771c-5.992,7.028-16.547,7.861-23.566,1.869l-99.54-84.92 c-7.028-5.992-7.861-16.546-1.869-23.566c5.991-7.029,16.546-7.861,23.566-1.87l99.54,84.92 C462.107,387.195,462.94,397.75,456.948,404.771z"></path>
+                            </g>
+                        </g>
+                    </svg>
+                    {% elif item.icon == 'steam' %}
+                    <svg class="size-5 text-[oklch(80%_0.09_300)]" fill="currentColor" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <title>steam</title>
+                            <path d="M18.102 12.129c0-0 0-0 0-0.001 0-1.564 1.268-2.831 2.831-2.831s2.831 1.268 2.831 2.831c0 1.564-1.267 2.831-2.831 2.831-0 0-0 0-0.001 0h0c-0 0-0 0-0.001 0-1.563 0-2.83-1.267-2.83-2.83 0-0 0-0 0-0.001v0zM24.691 12.135c0-2.081-1.687-3.768-3.768-3.768s-3.768 1.687-3.768 3.768c0 2.081 1.687 3.768 3.768 3.768v0c2.080-0.003 3.765-1.688 3.768-3.767v-0zM10.427 23.76l-1.841-0.762c0.524 1.078 1.611 1.808 2.868 1.808 1.317 0 2.448-0.801 2.93-1.943l0.008-0.021c0.155-0.362 0.246-0.784 0.246-1.226 0-1.757-1.424-3.181-3.181-3.181-0.405 0-0.792 0.076-1.148 0.213l0.022-0.007 1.903 0.787c0.852 0.364 1.439 1.196 1.439 2.164 0 1.296-1.051 2.347-2.347 2.347-0.324 0-0.632-0.066-0.913-0.184l0.015 0.006zM15.974 1.004c-7.857 0.001-14.301 6.046-14.938 13.738l-0.004 0.054 8.038 3.322c0.668-0.462 1.495-0.737 2.387-0.737 0.001 0 0.002 0 0.002 0h-0c0.079 0 0.156 0.005 0.235 0.008l3.575-5.176v-0.074c0.003-3.12 2.533-5.648 5.653-5.648 3.122 0 5.653 2.531 5.653 5.653s-2.531 5.653-5.653 5.653h-0.131l-5.094 3.638c0 0.065 0.005 0.131 0.005 0.199 0 0.001 0 0.002 0 0.003 0 2.342-1.899 4.241-4.241 4.241-2.047 0-3.756-1.451-4.153-3.38l-0.005-0.027-5.755-2.383c1.841 6.345 7.601 10.905 14.425 10.905 8.281 0 14.994-6.713 14.994-14.994s-6.713-14.994-14.994-14.994c-0 0-0.001 0-0.001 0h0z"></path>
+                        </g>
+                    </svg>
+                    {% endif %}
+                    <span class="font-medium">{{ item.label }}</span>
+                </span>
+            </a>
+            {% endfor %}
         </div>
-      </section>
-    </main>
 
-    <script>
-      function linkPage() {
-        return {
-          isTouch: false,
-          motionEnabled: false,
-          showMotionButton: false,
-          nx: 0,
-          ny: 0,
-
-          init() {
-            this.isTouch =
-              "ontouchstart" in window ||
-              navigator.maxTouchPoints > 0 ||
-              navigator.msMaxTouchPoints > 0;
-
-            window.addEventListener("mousemove", (e) => {
-              const w = window.innerWidth || 1;
-              const h = window.innerHeight || 1;
-              this.nx = (e.clientX / w) * 2 - 1;
-              this.ny = (e.clientY / h) * 2 - 1;
-            });
-
-            if (this.isTouch) this.setupMotion();
-          },
-
-          setupMotion() {
-            const handler = (evt) => {
-              const { beta = 0, gamma = 0 } = evt;
-              const x = Math.max(-45, Math.min(45, gamma)) / 45;
-              const y = Math.max(-45, Math.min(45, beta)) / 45;
-              this.nx = x;
-              this.ny = y;
-            };
-
-            if ("DeviceOrientationEvent" in window) {
-              try {
-                if (
-                  typeof DeviceOrientationEvent.requestPermission === "function"
-                ) {
-                  this.showMotionButton = true;
-                } else {
-                  window.addEventListener("deviceorientation", handler, true);
-                  this.motionEnabled = true;
-                }
-              } catch {}
-            }
-          },
-
-          async requestMotion() {
-            try {
-              const res = await DeviceOrientationEvent.requestPermission();
-              if (res === "granted") {
-                window.addEventListener(
-                  "deviceorientation",
-                  (evt) => {
-                    const { beta = 0, gamma = 0 } = evt;
-                    const x = Math.max(-45, Math.min(45, gamma)) / 45;
-                    const y = Math.max(-45, Math.min(45, beta)) / 45;
-                    this.nx = x;
-                    this.ny = y;
-                  },
-                  true
-                );
-                this.motionEnabled = true;
-                this.showMotionButton = false;
-              }
-            } catch {
-              this.motionEnabled = false;
-              this.showMotionButton = false;
-            }
-          },
-
-          parallaxVars(strength = 0.03, maxShiftVw = 18) {
-            const tx = (this.nx || 0) * maxShiftVw * strength;
-            const ty = (this.ny || 0) * maxShiftVw * strength;
-            return `--tx:${tx}vw; --ty:${ty}vw;`;
-          },
-        };
-      }
-    </script>
-
-    <noscript>
-      <div
-        class="fixed inset-x-0 bottom-0 z-50 m-2 rounded-md bg-black/70 p-3 text-center text-xs text-white"
-      >
-        JavaScript is disabled. Motion effects are off; links still work.
-      </div>
-    </noscript>
-  </body>
+        <!-- iOS motion permission prompt (shown only if needed) -->
+        <div
+            x-show="needsPermission"
+            x-transition.opacity
+            class="mt-6 rounded-xl border border-[oklch(40%_0.09_300_/0.6)]
+                            bg-black/40 p-4 text-sm text-[oklch(88%_0.02_300)]"
+        >
+            <p>
+                Enable motion access to make the background react to device
+                movement.
+            </p>
+            <button
+                @click="requestPermission()"
+                class="mt-3 inline-flex items-center gap-2 rounded-lg
+                                border border-[oklch(40%_0.09_300_/0.7)]
+                                px-3 py-1.5 text-sm font-medium
+                                text-[oklch(92%_0.02_300)]
+                                transition-colors hover:bg-[oklch(35%_0.08_300_/0.6)]
+                                focus:outline-none focus-visible:ring-2
+                                focus-visible:ring-[oklch(70%_0.10_300_/0.7)]"
+                type="button"
+            >
+                Enable motion
+            </button>
+        </div>
+    </section>
+</main>
+</div>
+</body>
 </html>

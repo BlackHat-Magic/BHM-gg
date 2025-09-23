@@ -1,0 +1,24 @@
+{
+  "name": "bhm-gg",
+  "version": "0.1.0",
+  "description": "Linktr.ee but overengineered, bespoke, and probably underoptimized",
+  "homepage": "https://github.com/BlackHat-Magic/BHM-gg#readme",
+  "bugs": {
+    "url": "https://github.com/BlackHat-Magic/BHM-gg/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BlackHat-Magic/BHM-gg.git"
+  },
+  "license": "AGPL-3.0",
+  "author": "BlackHat-Magic (Luke Henderson)",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "tailwindcss": "^4.1.13"
+  }
+}

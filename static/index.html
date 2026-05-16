@@ -7,24 +7,24 @@
         content="width=device-width, initial-scale=1, viewport-fit=cover"
     />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>{{ title | default('Links · Home') }}</title>
+    <title>Links · Home</title>
 
     <link
         rel="icon"
         type="image/png"
-        href="{{ url_for('static', filename='img/cat.png') }}"
+        href="/static/img/cat.png"
     />
 
     <!-- Tailwind v4 build output -->
     <link
         rel="stylesheet"
-        href="{{ url_for('static', filename='dist/main.css') }}"
+        href="/static/dist/main.css"
     />
 
     <!-- Parallax logic -->
     <script
         defer
-        src="{{ url_for('static', filename='js/index.js') }}"
+        src="/static/js/index.js"
     ></script>
 
     <!-- Alpine.js -->
@@ -87,8 +87,8 @@
         <!-- Profile -->
         <header class="flex flex-col items-center gap-4 text-center">
             <img
-                src="{{ url_for('static', filename='img/cat.png') }}"
-                alt="{{ display_name | default('Profile picture') }}"
+                src="/static/img/cat.png"
+                alt="Profile picture"
                 class="size-28 rounded-full object-cover ring-2 ring-[oklch(70%_0.06_300_/0.35)]"
             />
 
@@ -105,17 +105,10 @@
         </header>
 
         <div class="mt-8 space-y-3">
-            {% for item in [
-                {'label': 'Twitch', 'href': 'https://twitch.tv/BlackHat_Magic', 'icon': 'twitch'},
-                {'label': 'Twitter', 'href': 'https://x.com/Black_HatMagic', 'icon': 'x'},
-                {'label': 'Discord', 'href': 'https://discord.gg/dqSusZqenq', 'icon': 'discord'},
-                {'label': 'GitHub', 'href': 'https://github.com/BlackHat-Magic', 'icon': 'github'},
-                {'label': 'Email', 'href': 'mailto:blackhatmagic@bhm.gg', 'icon': 'mail'},
-                {'label': 'Steam', 'href': 'https://steamcommunity.com/id/Black_Hat_Magic/', 'icon': 'steam'}
-            ] %}
+            <!-- Twitch -->
             <a
-                href="{{ item.href }}"
-                {% if item.label != 'Email' %}target="_blank" rel="me noopener"{% endif %}
+                href="https://twitch.tv/BlackHat_Magic"
+                target="_blank" rel="me noopener"
                 class="group relative block w-full overflow-hidden rounded-2xl
                                 border border-[oklch(40%_0.09_300_/0.7)]
                                 px-4 py-3 text-[oklch(90%_0.02_300)]
@@ -133,7 +126,6 @@
                     aria-hidden="true"
                 ></span>
                 <span class="relative z-[1] flex items-center gap-3">
-                    {% if item.icon == 'twitch' %}
                     <svg class="size-5 text-[oklch(80%_0.09_300)]" fill="currentColor" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -142,7 +134,30 @@
                             <path d="M26.711 14.929l-4.284 4.284h-4.285l-3.749 3.749v-3.749h-4.82v-16.067h17.138zM8.502 1.004l-5.356 5.356v19.279h6.427v5.356l5.356-5.356h4.284l9.641-9.64v-14.996zM21.356 6.895h2.142v6.427h-2.142zM15.464 6.895h2.143v6.427h-2.144z"></path>
                         </g>
                     </svg>
-                    {% elif item.icon == 'x' %}
+                    <span class="font-medium">Twitch</span>
+                </span>
+            </a>
+            <!-- Twitter -->
+            <a
+                href="https://x.com/Black_HatMagic"
+                target="_blank" rel="me noopener"
+                class="group relative block w-full overflow-hidden rounded-2xl
+                                border border-[oklch(40%_0.09_300_/0.7)]
+                                px-4 py-3 text-[oklch(90%_0.02_300)]
+                                transition-transform duration-150
+                                hover:-translate-y-0.5 focus:-translate-y-0.5
+                                focus:outline-none focus-visible:ring-2
+                                focus-visible:ring-[oklch(70%_0.10_300_/0.7)]
+                                active:translate-y-0"
+            >
+                <span
+                    class="pointer-events-none absolute inset-0 w-0
+                                    bg-[oklch(35%_0.08_300_/0.9)]
+                                    transition-[width] duration-500 ease-out
+                                    group-hover:w-full group-focus-visible:w-full"
+                    aria-hidden="true"
+                ></span>
+                <span class="relative z-[1] flex items-center gap-3">
                     <svg class="size-5 text-[oklch(80%_0.09_300)]" fill="currentColor" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -151,7 +166,30 @@
                             <path style="display: inline;" d="M459.186,151.787c0.203,4.501,0.305,9.023,0.305,13.565 c0,138.542-105.461,298.285-298.274,298.285c-59.209,0-114.322-17.357-160.716-47.104c8.212,0.973,16.546,1.47,25.012,1.47 c49.121,0,94.318-16.759,130.209-44.884c-45.887-0.841-84.596-31.154-97.938-72.804c6.408,1.227,12.968,1.886,19.73,1.886 c9.55,0,18.816-1.287,27.617-3.68c-47.955-9.633-84.1-52.001-84.1-102.795c0-0.446,0-0.882,0.011-1.318 c14.133,7.847,30.294,12.562,47.488,13.109c-28.134-18.796-46.637-50.885-46.637-87.262c0-19.212,5.16-37.218,14.193-52.7 c51.707,63.426,128.941,105.156,216.072,109.536c-1.784-7.675-2.718-15.674-2.718-23.896c0-57.891,46.941-104.832,104.832-104.832 c30.173,0,57.404,12.734,76.525,33.102c23.887-4.694,46.313-13.423,66.569-25.438c-7.827,24.485-24.434,45.025-46.089,58.002 c21.209-2.535,41.426-8.171,60.222-16.505C497.448,118.542,479.666,137.004,459.186,151.787z"></path>
                         </g>
                     </svg>
-                    {% elif item.icon == 'discord' %}
+                    <span class="font-medium">Twitter</span>
+                </span>
+            </a>
+            <!-- Discord -->
+            <a
+                href="https://discord.gg/dqSusZqenq"
+                target="_blank" rel="me noopener"
+                class="group relative block w-full overflow-hidden rounded-2xl
+                                border border-[oklch(40%_0.09_300_/0.7)]
+                                px-4 py-3 text-[oklch(90%_0.02_300)]
+                                transition-transform duration-150
+                                hover:-translate-y-0.5 focus:-translate-y-0.5
+                                focus:outline-none focus-visible:ring-2
+                                focus-visible:ring-[oklch(70%_0.10_300_/0.7)]
+                                active:translate-y-0"
+            >
+                <span
+                    class="pointer-events-none absolute inset-0 w-0
+                                    bg-[oklch(35%_0.08_300_/0.9)]
+                                    transition-[width] duration-500 ease-out
+                                    group-hover:w-full group-focus-visible:w-full"
+                    aria-hidden="true"
+                ></span>
+                <span class="relative z-[1] flex items-center gap-3">
                     <svg class="size-5 text-[oklch(80%_0.09_300)]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -159,7 +197,30 @@
                             <path d="M18.59 5.88997C17.36 5.31997 16.05 4.89997 14.67 4.65997C14.5 4.95997 14.3 5.36997 14.17 5.69997C12.71 5.47997 11.26 5.47997 9.83001 5.69997C9.69001 5.36997 9.49001 4.95997 9.32001 4.65997C7.94001 4.89997 6.63001 5.31997 5.40001 5.88997C2.92001 9.62997 2.25001 13.28 2.58001 16.87C4.23001 18.1 5.82001 18.84 7.39001 19.33C7.78001 18.8 8.12001 18.23 8.42001 17.64C7.85001 17.43 7.31001 17.16 6.80001 16.85C6.94001 16.75 7.07001 16.64 7.20001 16.54C10.33 18 13.72 18 16.81 16.54C16.94 16.65 17.07 16.75 17.21 16.85C16.7 17.16 16.15 17.42 15.59 17.64C15.89 18.23 16.23 18.8 16.62 19.33C18.19 18.84 19.79 18.1 21.43 16.87C21.82 12.7 20.76 9.08997 18.61 5.88997H18.59ZM8.84001 14.67C7.90001 14.67 7.13001 13.8 7.13001 12.73C7.13001 11.66 7.88001 10.79 8.84001 10.79C9.80001 10.79 10.56 11.66 10.55 12.73C10.55 13.79 9.80001 14.67 8.84001 14.67ZM15.15 14.67C14.21 14.67 13.44 13.8 13.44 12.73C13.44 11.66 14.19 10.79 15.15 10.79C16.11 10.79 16.87 11.66 16.86 12.73C16.86 13.79 16.11 14.67 15.15 14.67Z" fill="currentColor"></path> 
                         </g>
                     </svg>
-                    {% elif item.icon == 'github' %}
+                    <span class="font-medium">Discord</span>
+                </span>
+            </a>
+            <!-- GitHub -->
+            <a
+                href="https://github.com/BlackHat-Magic"
+                target="_blank" rel="me noopener"
+                class="group relative block w-full overflow-hidden rounded-2xl
+                                border border-[oklch(40%_0.09_300_/0.7)]
+                                px-4 py-3 text-[oklch(90%_0.02_300)]
+                                transition-transform duration-150
+                                hover:-translate-y-0.5 focus:-translate-y-0.5
+                                focus:outline-none focus-visible:ring-2
+                                focus-visible:ring-[oklch(70%_0.10_300_/0.7)]
+                                active:translate-y-0"
+            >
+                <span
+                    class="pointer-events-none absolute inset-0 w-0
+                                    bg-[oklch(35%_0.08_300_/0.9)]
+                                    transition-[width] duration-500 ease-out
+                                    group-hover:w-full group-focus-visible:w-full"
+                    aria-hidden="true"
+                ></span>
+                <span class="relative z-[1] flex items-center gap-3">
                     <svg class="size-5 text-[oklch(80%_0.09_300)]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -168,7 +229,29 @@
                             <path d="M4 17C4.36915 17.0523 4.72159 17.1883 5.03065 17.3975C5.3397 17.6068 5.59726 17.8838 5.7838 18.2078C5.94231 18.4962 6.15601 18.7504 6.41264 18.9557C6.66927 19.161 6.96379 19.3135 7.27929 19.4043C7.59478 19.4952 7.92504 19.5226 8.25112 19.485C8.5772 19.4475 8.89268 19.3457 9.17946 19.1855" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
                         </g>
                     </svg>
-                    {% elif item.icon == 'mail' %}
+                    <span class="font-medium">GitHub</span>
+                </span>
+            </a>
+            <!-- Email -->
+            <a
+                href="mailto:blackhatmagic@bhm.gg"
+                class="group relative block w-full overflow-hidden rounded-2xl
+                                border border-[oklch(40%_0.09_300_/0.7)]
+                                px-4 py-3 text-[oklch(90%_0.02_300)]
+                                transition-transform duration-150
+                                hover:-translate-y-0.5 focus:-translate-y-0.5
+                                focus:outline-none focus-visible:ring-2
+                                focus-visible:ring-[oklch(70%_0.10_300_/0.7)]
+                                active:translate-y-0"
+            >
+                <span
+                    class="pointer-events-none absolute inset-0 w-0
+                                    bg-[oklch(35%_0.08_300_/0.9)]
+                                    transition-[width] duration-500 ease-out
+                                    group-hover:w-full group-focus-visible:w-full"
+                    aria-hidden="true"
+                ></span>
+                <span class="relative z-[1] flex items-center gap-3">
                     <svg class="size-5 text-[oklch(80%_0.09_300)]" height="200px" width="200px" version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill=currentColor">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -179,7 +262,30 @@
                             </g>
                         </g>
                     </svg>
-                    {% elif item.icon == 'steam' %}
+                    <span class="font-medium">Email</span>
+                </span>
+            </a>
+            <!-- Steam -->
+            <a
+                href="https://steamcommunity.com/id/Black_Hat_Magic/"
+                target="_blank" rel="me noopener"
+                class="group relative block w-full overflow-hidden rounded-2xl
+                                border border-[oklch(40%_0.09_300_/0.7)]
+                                px-4 py-3 text-[oklch(90%_0.02_300)]
+                                transition-transform duration-150
+                                hover:-translate-y-0.5 focus:-translate-y-0.5
+                                focus:outline-none focus-visible:ring-2
+                                focus-visible:ring-[oklch(70%_0.10_300_/0.7)]
+                                active:translate-y-0"
+            >
+                <span
+                    class="pointer-events-none absolute inset-0 w-0
+                                    bg-[oklch(35%_0.08_300_/0.9)]
+                                    transition-[width] duration-500 ease-out
+                                    group-hover:w-full group-focus-visible:w-full"
+                    aria-hidden="true"
+                ></span>
+                <span class="relative z-[1] flex items-center gap-3">
                     <svg class="size-5 text-[oklch(80%_0.09_300)]" fill="currentColor" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg">
                         <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                         <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
@@ -188,11 +294,9 @@
                             <path d="M18.102 12.129c0-0 0-0 0-0.001 0-1.564 1.268-2.831 2.831-2.831s2.831 1.268 2.831 2.831c0 1.564-1.267 2.831-2.831 2.831-0 0-0 0-0.001 0h0c-0 0-0 0-0.001 0-1.563 0-2.83-1.267-2.83-2.83 0-0 0-0 0-0.001v0zM24.691 12.135c0-2.081-1.687-3.768-3.768-3.768s-3.768 1.687-3.768 3.768c0 2.081 1.687 3.768 3.768 3.768v0c2.080-0.003 3.765-1.688 3.768-3.767v-0zM10.427 23.76l-1.841-0.762c0.524 1.078 1.611 1.808 2.868 1.808 1.317 0 2.448-0.801 2.93-1.943l0.008-0.021c0.155-0.362 0.246-0.784 0.246-1.226 0-1.757-1.424-3.181-3.181-3.181-0.405 0-0.792 0.076-1.148 0.213l0.022-0.007 1.903 0.787c0.852 0.364 1.439 1.196 1.439 2.164 0 1.296-1.051 2.347-2.347 2.347-0.324 0-0.632-0.066-0.913-0.184l0.015 0.006zM15.974 1.004c-7.857 0.001-14.301 6.046-14.938 13.738l-0.004 0.054 8.038 3.322c0.668-0.462 1.495-0.737 2.387-0.737 0.001 0 0.002 0 0.002 0h-0c0.079 0 0.156 0.005 0.235 0.008l3.575-5.176v-0.074c0.003-3.12 2.533-5.648 5.653-5.648 3.122 0 5.653 2.531 5.653 5.653s-2.531 5.653-5.653 5.653h-0.131l-5.094 3.638c0 0.065 0.005 0.131 0.005 0.199 0 0.001 0 0.002 0 0.003 0 2.342-1.899 4.241-4.241 4.241-2.047 0-3.756-1.451-4.153-3.38l-0.005-0.027-5.755-2.383c1.841 6.345 7.601 10.905 14.425 10.905 8.281 0 14.994-6.713 14.994-14.994s-6.713-14.994-14.994-14.994c-0 0-0.001 0-0.001 0h0z"></path>
                         </g>
                     </svg>
-                    {% endif %}
-                    <span class="font-medium">{{ item.label }}</span>
+                    <span class="font-medium">Steam</span>
                 </span>
             </a>
-            {% endfor %}
         </div>
 
         <!-- iOS motion permission prompt (shown only if needed) -->

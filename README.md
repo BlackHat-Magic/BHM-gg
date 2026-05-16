@@ -30,6 +30,7 @@ Basically just to waste time.
 ## Quickstart
 
 ```sh
-nixpacks build . -n <container_name>
+docker buildx build -t bhmgg:master .
+docker run bhmgg:master	# tries to bind to port 80
 ```
 

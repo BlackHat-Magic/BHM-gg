@@ -9,7 +9,7 @@ Like Carrd or Linktree but overdesigned, bespoke, and probably underoptimized.
 
 ## Overview
 
-Just a simple nixpack to build a static webpage that could just as easily be done with Carrd or Linktree.
+Just a simple dockerfile to build a static webpage that could just as easily be done with Carrd or Linktree.
 
 ### Goals
 

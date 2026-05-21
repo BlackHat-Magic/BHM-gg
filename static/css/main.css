@@ -5,7 +5,7 @@
 */
 
 /* Scan sources for class names */
-@source "../../templates/**/*.html" "../../static/js/**/*.js";
+@source "../**/*.html" "../js/**/*.js";
 
 /* Tailwind */
 @import "tailwindcss";
